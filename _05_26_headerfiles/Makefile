@@ -28,9 +28,10 @@ $(TARGET): $(OBJS)
 
 #Run the program
 run:$(TARGET)
-	$(MAKE) clean
 	@echo ""
 	./$(TARGET)
+	@echo ""
+	$(MAKE) clean
 
 clean:
 	rm -f $(OBJS)
