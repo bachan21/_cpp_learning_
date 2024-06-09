@@ -34,5 +34,8 @@ run:$(TARGET)
 	$(MAKE) clean
 
 clean:
-	rm -f $(OBJS)
-	rm -f *.exe
+ifeq ($(OS),Windows_NT)
+	del $(OBJS) $(TARGET).exe
+else
+	rm -f $(OBJS) $(TARGET)
+endif
